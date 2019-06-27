@@ -1,0 +1,28 @@
+// What goes here?
+// - fonts
+// - generic utility classes
+// -
+@import './mixins.scss';
+
+.navigation {
+  height: 88px;
+  width: 100%;
+
+  @include sm {
+    height: 150px;
+  }
+
+  .header {
+    height: 50%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    background: #f7f7f7;
+    height: 50%;
+  }
+}

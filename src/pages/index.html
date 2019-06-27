@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+  @@include('../partials/head.html', {
+  "title": "my great title"
+  })
+
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  <link href="/css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+  @@include('../partials/navigation.html', {
+  "active":"index"
+  })
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@import '../mixins.scss';
+
+h1 {
+  color: blue;
+
+  @include sm {
+    color: green;
+  }
+}
