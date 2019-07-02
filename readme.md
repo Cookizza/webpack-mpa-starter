@@ -69,6 +69,11 @@ Any image which is under 8kb will be converted to base64 and included inline.
 This happens automatically as long as images are required like the logo example:
 
     <img src="<%- require('../assets/img/logo.png')%>" alt="">    
+
+#### Favicon
+Currently the `./favicon.png` in the root of the project is built into all known types of favicon.
+
+The meta tags are added automatically to each page. Just update the image file to your own icon at least 512px square.
    
 ### Usage
 

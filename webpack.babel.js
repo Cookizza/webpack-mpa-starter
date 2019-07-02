@@ -5,6 +5,7 @@ var path = require('path');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
@@ -136,7 +137,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['./assets/*.webp'],
+    }),
     new ImageminWebpWebpackPlugin({
       config: [{
         test: /\.(jpe?g|png)/,
@@ -146,7 +149,7 @@ module.exports = {
       }],
       overrideExtension: true,
       detailedLogs: false,
-      silent: false,
+      silent: true,
       strict: true
     }),
     new MiniCssExtractPlugin({
@@ -156,6 +159,7 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new FixStyleOnlyEntriesPlugin(),
-    ...configObject
+    ...configObject,
+    new WebappWebpackPlugin('./favicon.png'),
   ]
 };
