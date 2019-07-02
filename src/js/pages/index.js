@@ -1,1 +1,1 @@
-$("h1").text('Replaced via jQuery');
+$('h1').text('Replaced via jQuery');

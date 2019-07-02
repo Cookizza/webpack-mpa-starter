@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <% include src/partials/head.ejs %>
+</head>
+<body>
+
+<div class="container">
+
+    <% include src/partials/navigation.ejs %>
+
+        <picture>
+            <source srcset="/img/large-image-example.webp" type="image/webp">
+            <source srcset="/img/large-image-example.png" type="image/jpeg">
+            <img class="image-example" src="<%- require('../assets/img/large-image-example.png')%>" alt="">
+        </picture>
+</div>
+</body>
+</html>

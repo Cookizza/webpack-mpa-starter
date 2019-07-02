@@ -1,28 +1,18 @@
 // What goes here?
 // - fonts
 // - generic utility classes
-// -
+// - truly global styles
+
 @import './mixins.scss';
 
-.navigation {
-  height: 88px;
-  width: 100%;
+//Add your pages here
+@import 'pages/index';
 
-  @include sm {
-    height: 150px;
-  }
+.container {
+  background: url('../assets/img/large-background-example.png');
 
-  .header {
-    height: 50%;
-    max-width: 1200px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menu {
-    background: #f7f7f7;
-    height: 50%;
+  .image-example {
+    width: 600px;
   }
 }
+
