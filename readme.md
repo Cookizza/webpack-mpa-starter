@@ -64,7 +64,7 @@ Don't forget to append your page specific `scss` files to the `./src/scss/app.sc
 
     @import 'pages/index';
 
-#### Image inliner
+#### Image BASE64 inliner
 Any image which is under 8kb will be converted to base64 and included inline. 
 This happens automatically as long as images are required like the logo example:
 
@@ -74,6 +74,10 @@ This happens automatically as long as images are required like the logo example:
 Currently the `./favicon.png` in the root of the project is built into all known types of favicon.
 
 The meta tags are added automatically to each page. Just update the image file to your own icon at least 512px square.
+
+#### Compression
+All JS, CSS and HTML files have a gzip version included automatically. 
+If your web server is setup to serve them it's a great way to reduce network transfer.
    
 ### Usage
 
