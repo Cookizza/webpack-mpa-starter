@@ -7,9 +7,9 @@ const config = {
       chunks: ['main', 'index'],
       title: 'My index page',
       meta: {
-        description: 'Great meta description'
+        description: 'Great meta description',
       }
-    }
+    },
   ]
 };
 

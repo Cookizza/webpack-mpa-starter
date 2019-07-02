@@ -5,10 +5,10 @@ var path = require('path');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const WebappWebpackPlugin = require('webapp-webpack-plugin')
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
-
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
 
@@ -19,6 +19,7 @@ config.pages.forEach(e => {
   let h = {
     inject: true,
     filename: e.file,
+    chunks: e.chunks,
     template: `src/pages/${e.template}`,
     title: e.title,
     templateParameters: {
@@ -82,14 +83,14 @@ module.exports = {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
-                progressive: false,
-                quality: 10
+                progressive: true,
+                quality: 80
               },
               optipng: {
-                enabled: true,
+                enabled: false,
               },
               pngquant: {
-                quality: '65-90',
+                quality: '75-90',
                 speed: 4
               },
               gifsicle: {
@@ -97,7 +98,7 @@ module.exports = {
               },
               // the webp option will enable WEBP
               webp: {
-                quality: 75
+                quality: 80
               }
             }
           },
@@ -144,7 +145,7 @@ module.exports = {
       config: [{
         test: /\.(jpe?g|png)/,
         options: {
-          quality:  75
+          quality: 75
         }
       }],
       overrideExtension: true,
@@ -161,5 +162,8 @@ module.exports = {
     new FixStyleOnlyEntriesPlugin(),
     ...configObject,
     new WebappWebpackPlugin('./favicon.png'),
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
+    })
   ]
 };
