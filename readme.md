@@ -6,11 +6,13 @@ This template aims to get you up and running with a best in class setup that cov
 
 ### Out of the box you will get:
 - HTML partials and optimisation with EJS templates
-- Sass compilation
+- Sass compilation with easy responsive mixins
 - Automatic creation of WebP and fallback images
 - Optimisation of all images based on format 
 - ES6 compilation to all browsers
+- Automatic favicon creation
 - Cache busting with file hashes 
+- Gzip compression of all viable assets
 
 ### Configuration
 
