@@ -89,4 +89,5 @@ If your web server is setup to serve them it's a great way to reduce network tra
 
 `npm run lint` - Runs the eslint autofixer which cleans up source files
 
-Built with :rage: 
+
+Built with :coffee: 
