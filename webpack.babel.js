@@ -76,12 +76,13 @@ module.exports = {
         }]
       },
       {
+        type: 'javascript/auto',
         test: /\.json$/,
         use: [
           {
-            loader: 'json-loader',
+            loader: 'file-loader',
             options: {
-              outputPath: 'json/'
+              name: './json/[name].[ext]'
             }
           }
         ]
