@@ -76,6 +76,17 @@ module.exports = {
         }]
       },
       {
+        test: /\.json$/,
+        use: [
+          {
+            loader: 'json-loader',
+            options: {
+              outputPath: 'json/'
+            }
+          }
+        ]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: [
           'url-loader?name=[name].[ext]&outputPath=./img/&limit=8192',
