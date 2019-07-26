@@ -76,6 +76,16 @@ module.exports = {
         }]
       },
       {
+        test: /\.(pdf)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'pdf/'
+          }
+        }]
+      },
+      {
         type: 'javascript/auto',
         test: /\.json$/,
         use: [
