@@ -86,6 +86,16 @@ module.exports = {
         }]
       },
       {
+        test: /\.(xls?m)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'xls/',
+          },
+        }],
+      },
+      {
         type: 'javascript/auto',
         test: /\.json$/,
         use: [
