@@ -163,7 +163,13 @@ module.exports = {
     }
   },
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+    minimizer: [new TerserJSPlugin({
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      }
+    }), new OptimizeCSSAssetsPlugin({})]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
