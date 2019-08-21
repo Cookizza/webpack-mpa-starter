@@ -196,7 +196,7 @@ module.exports = {
     }),
     new FixStyleOnlyEntriesPlugin(),
     ...configObject,
-    new WebappWebpackPlugin('./favicon.png'),
+    new WebappWebpackPlugin({ logo: './favicon.png', appName: null, appDescription: null }),
     new CompressionPlugin({
       filename: '[path].gz[query]',
     })
